@@ -1,0 +1,14 @@
+@startuml
+title Пробуем написать юмл диаграмму
+left to right direction
+actor "Guest" as Guest
+usecase "Registration User" as Registration
+Guest --> Registration
+
+actor "User" as User
+usecase "Создать план" as CreatePlan
+User --> CreatePlan
+User --> (Изменить план)
+actor "Expert" as Expert
+Expert -left-|> User
+@enduml
