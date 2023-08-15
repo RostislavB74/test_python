@@ -1,14 +1,45 @@
 @startuml
-title Пробуем написать юмл диаграмму
+title UML Casess
 left to right direction
-actor "Guest" as Guest
-usecase "Registration User" as Registration
-Guest --> Registration
-
 actor "User" as User
-usecase "Создать план" as CreatePlan
-User --> CreatePlan
-User --> (Изменить план)
-actor "Expert" as Expert
-Expert -left-|> User
+usecase "Main Menu Personal Assistant" as Menu
+usecase "Address Book" as AB
+usecase "Files Sorter" as sorter
+usecase "NoteBook" as notes
+usecase "Add contact" as addcontact
+usecase "Show AddressBook" as showall
+usecase "Save AddressBook" as savetobin
+usecase "Export AddressBook" as export_ab
+usecase "Birthday Contact" as birthday
+usecase "Edit contact" as editcontact
+User --> Menu
+Menu --> AB
+Menu --> notes
+Menu --> sorter
+AB --> addcontact
+AB --> showall
+AB --> savetobin
+AB --> editcontact
+AB --> export_ab
+AB --> birthday
+export_ab --> (save to .csv)
+export_ab --> (save to .json)
+export_ab --> (save to .txt)
+birthday --> (get days to birthday)
+birthday --> (get birthday in n-days)
+editcontact --> (edit date contacts)
+editcontact --> (remove phone from contact)
+editcontact --> (delete contact)
+editcontact --> (search contact)
+AB --> (Help menu)
+AB --> (Exit return to Main Menu Personal Assistant)
+notes --> (to add note)
+notes --> (to delete note)
+notes --> (to edit note)
+notes --> (to search note)
+notes --> (to output all note)
+notes --> (Help)
+notes --> (Exit return to Main Menu Personal Assistant)
+sorter --> (sorting)
+sorter --> (Exit return to Main Menu Personal Assistant)
 @enduml
